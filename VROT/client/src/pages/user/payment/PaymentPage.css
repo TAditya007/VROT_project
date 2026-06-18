@@ -1,0 +1,752 @@
+/* =========================================================
+   VROT PAYMENT PAGE
+   Premium dark government-tech payment page
+   Theme requested:
+   - Deep navy to black background
+   - Emerald success states
+   - Silver borders / separators
+   - Purple highlight states
+   - Optional background image support
+   ========================================================= */
+
+/* =========================================================
+   PAGE ROOT
+   Main full-page background and text color
+   ========================================================= */
+.payment-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 32px 20px 56px;
+  color: #f5f7fb;
+  overflow: hidden;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    linear-gradient(135deg, rgba(10, 31, 68, 0.92) 0%, rgba(13, 13, 13, 0.94) 100%),
+    url("../../../assets/payment/payment_background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* =========================================================
+   DIGITAL MESH OVERLAY
+   Subtle tech-secure pattern above background image
+   ========================================================= */
+.payment-page__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(192, 192, 192, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(192, 192, 192, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 20% 20%, rgba(106, 13, 173, 0.08), transparent 24%),
+    radial-gradient(circle at 80% 12%, rgba(46, 204, 113, 0.05), transparent 18%);
+  background-size: 36px 36px, 36px 36px, auto, auto;
+  opacity: 0.42;
+}
+
+/* =========================================================
+   PAGE CONTAINER
+   Main centered content wrapper
+   ========================================================= */
+.payment-page__container {
+  position: relative;
+  z-index: 1;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+   Top intro content
+   ========================================================= */
+.payment-page__header {
+  margin-bottom: 28px;
+}
+
+.payment-page__header h1 {
+  margin: 12px 0 10px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.payment-page__header p {
+  max-width: 760px;
+  color: #d7dce6;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   TOP BADGE
+   Small page identification pill
+   ========================================================= */
+.payment-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border: 1px solid rgba(192, 192, 192, 0.22);
+  border-radius: 999px;
+  background: rgba(106, 13, 173, 0.16);
+  color: #ece0ff;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 0 18px rgba(106, 13, 173, 0.12);
+}
+
+/* =========================================================
+   PROGRESS BAR
+   Billing Info -> Payment Method -> Confirmation
+   Add this class in JSX if you already included a progress row
+   ========================================================= */
+.payment-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 0 0 26px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  background: rgba(8, 14, 24, 0.58);
+  border: 1px solid rgba(192, 192, 192, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.payment-progress__step {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #c0c0c0;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.payment-progress__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(192, 192, 192, 0.55);
+  background: rgba(192, 192, 192, 0.18);
+}
+
+.payment-progress__step.active .payment-progress__dot,
+.payment-progress__step.completed .payment-progress__dot {
+  background: #2ecc71;
+  border-color: #2ecc71;
+  box-shadow: 0 0 12px rgba(46, 204, 113, 0.4);
+}
+
+.payment-progress__step.active {
+  color: #ffffff;
+}
+
+.payment-progress__step.completed {
+  color: #bdf3d1;
+}
+
+.payment-progress__line {
+  flex: 0 0 42px;
+  height: 1px;
+  background: rgba(192, 192, 192, 0.28);
+}
+
+.payment-progress__line.completed {
+  background: #2ecc71;
+  box-shadow: 0 0 8px rgba(46, 204, 113, 0.22);
+}
+
+/* =========================================================
+   MAIN TWO-COLUMN LAYOUT
+   Left summary, right payment form
+   ========================================================= */
+.payment-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.15fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* =========================================================
+   GENERIC CARD
+   Shared premium glass card style
+   ========================================================= */
+.payment-card {
+  background: rgba(9, 14, 23, 0.68);
+  border: 1px solid rgba(192, 192, 192, 0.12);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(18px);
+}
+
+/* =========================================================
+   CARD HEADER
+   Title + small state pill
+   ========================================================= */
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.card-head h2 {
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+/* =========================================================
+   STATUS PILLS
+   Small labels at top-right of cards
+   ========================================================= */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(192, 192, 192, 0.08);
+  border: 1px solid rgba(192, 192, 192, 0.16);
+  color: #d8d8d8;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.status-pill.alt {
+  background: rgba(106, 13, 173, 0.14);
+  border-color: rgba(106, 13, 173, 0.28);
+  color: #ead8ff;
+}
+
+/* =========================================================
+   SUMMARY SERVICE BLOCK
+   Shows selected government service
+   ========================================================= */
+.summary-service {
+  padding: 18px;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(192, 192, 192, 0.08);
+}
+
+.summary-label {
+  margin-bottom: 6px;
+  color: #c0c0c0;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.summary-service h3 {
+  font-size: 1.16rem;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   SUMMARY LIST
+   Fee rows and total amount
+   ========================================================= */
+.summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  color: #d4d8df;
+  font-size: 0.98rem;
+}
+
+.summary-row strong {
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.summary-row.total {
+  margin-top: 6px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(192, 192, 192, 0.18);
+  font-size: 1.08rem;
+}
+
+.summary-row.total strong {
+  color: #2ecc71;
+  font-size: 1.16rem;
+}
+
+/* =========================================================
+   NOTE BLOCK
+   Demo note for academic use
+   ========================================================= */
+.payment-note {
+  margin-top: 22px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(106, 13, 173, 0.1);
+  border: 1px solid rgba(106, 13, 173, 0.2);
+  color: #ddd3ee;
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
+/* =========================================================
+   PAYMENT METHOD GRID
+   Method selection cards
+   ========================================================= */
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+/* =========================================================
+   PAYMENT METHOD CARD
+   Interactive option button
+   ========================================================= */
+.method-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 58px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(192, 192, 192, 0.12);
+  background: rgba(255, 255, 255, 0.035);
+  color: #e0e2e8;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.method-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(106, 13, 173, 0.46);
+  box-shadow: 0 0 18px rgba(106, 13, 173, 0.14);
+}
+
+.method-card.active {
+  border-color: rgba(106, 13, 173, 0.58);
+  background: rgba(106, 13, 173, 0.16);
+  color: #ffffff;
+  box-shadow: 0 0 0 1px rgba(106, 13, 173, 0.18), 0 0 18px rgba(106, 13, 173, 0.16);
+}
+
+/* =========================================================
+   METHOD ICON
+   Small circular icon area
+   ========================================================= */
+.method-icon {
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(192, 192, 192, 0.1);
+  color: #c0c0c0;
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   FORM LAYOUT
+   Payment details form wrapper
+   ========================================================= */
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.payment-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.payment-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* =========================================================
+   FORM FIELD
+   Shared label + input group
+   ========================================================= */
+.payment-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.payment-field label {
+  color: #f0f2f7;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+/* =========================================================
+   INPUTS / SELECTS
+   Silver focus glow requested
+   ========================================================= */
+.payment-field input,
+.payment-field select {
+  width: 100%;
+  height: 52px;
+  border: 1px solid rgba(192, 192, 192, 0.2);
+  border-radius: 14px;
+  padding: 0 15px;
+  background: rgba(8, 12, 20, 0.82);
+  color: #f5f7fb;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.payment-field input::placeholder {
+  color: #95a0b2;
+}
+
+.payment-field input:focus,
+.payment-field select:focus {
+  border-color: #c0c0c0;
+  box-shadow:
+    0 0 0 3px rgba(192, 192, 192, 0.16),
+    0 0 16px rgba(192, 192, 192, 0.08);
+}
+
+/* =========================================================
+   FORM ERRORS
+   Friendly error text
+   ========================================================= */
+.field-error,
+.submit-error {
+  color: #ff9aaa;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   CASH OPTION BOX
+   Mock cash explanation
+   ========================================================= */
+.payment-cash-box {
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px dashed rgba(192, 192, 192, 0.25);
+  color: #d5dae4;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   PRIMARY PAY BUTTON
+   Emerald hover glow requested
+   ========================================================= */
+.pay-now-btn {
+  width: 100%;
+  min-height: 54px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #1f7a4c 0%, #2ecc71 100%);
+  color: #07120d;
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+  box-shadow: 0 12px 24px rgba(46, 204, 113, 0.18);
+}
+
+.pay-now-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 36px rgba(46, 204, 113, 0.24),
+    0 0 20px rgba(46, 204, 113, 0.2);
+}
+
+.pay-now-btn:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================================================
+   DISCLAIMER
+   Small guidance text below button
+   ========================================================= */
+.payment-disclaimer {
+  color: #bcc4d3;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   SUCCESS CARD
+   Confirmation block after payment
+   ========================================================= */
+.payment-success-card {
+  margin-top: 24px;
+  border-color: rgba(46, 204, 113, 0.24);
+  background:
+    linear-gradient(180deg, rgba(10, 28, 20, 0.92), rgba(9, 16, 14, 0.96)),
+    linear-gradient(135deg, rgba(46, 204, 113, 0.08), rgba(192, 192, 192, 0.03));
+}
+
+/* =========================================================
+   SUCCESS HEADER
+   Checkmark + success text row
+   ========================================================= */
+.success-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+/* =========================================================
+   SUCCESS CHECK ICON
+   Animated emerald checkmark
+   ========================================================= */
+.success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1f9d57 0%, #2ecc71 100%);
+  color: #041009;
+  font-size: 1.55rem;
+  font-weight: 900;
+  box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.45);
+  animation: paymentSuccessPulse 1.4s ease-out 1;
+}
+
+.success-top h2 {
+  margin-bottom: 6px;
+  color: #eefff5;
+  font-size: 1.35rem;
+}
+
+.success-top p {
+  color: #c3e8d0;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   SUCCESS GRID
+   Transaction details
+   ========================================================= */
+.success-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.success-item {
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(192, 192, 192, 0.08);
+}
+
+.success-item span {
+  display: block;
+  margin-bottom: 8px;
+  color: #a9d6b7;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.success-item strong {
+  color: #ffffff;
+  font-size: 0.97rem;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+/* =========================================================
+   SUCCESS CHECK ANIMATION
+   Soft pulse for completion feel
+   ========================================================= */
+@keyframes paymentSuccessPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.4;
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.48);
+  }
+  60% {
+    transform: scale(1.06);
+    opacity: 1;
+    box-shadow: 0 0 0 18px rgba(46, 204, 113, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+  }
+}
+
+/* =========================================================
+   TABLET
+   Stack the two main cards
+   ========================================================= */
+@media (max-width: 992px) {
+  .payment-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-progress {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   Compact spacing and single-column sections
+   ========================================================= */
+@media (max-width: 640px) {
+  .payment-page {
+    padding: 22px 14px 42px;
+    background-position: center center;
+  }
+
+  .payment-card {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .card-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .method-grid,
+  .payment-form-row,
+  .success-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-page__header h1 {
+    font-size: 1.9rem;
+  }
+
+  .pay-now-btn {
+    min-height: 52px;
+  }
+
+  .payment-progress {
+    gap: 10px;
+    padding: 12px 14px;
+  }
+
+  .payment-progress__line {
+    flex-basis: 24px;
+  }
+}
+
+/* QR Code Card */
+.payment-qr-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.qr-container {
+  margin: 20px 0;
+  padding: 20px;
+  background: white;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.qr-code {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.qr-label {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.qr-amount {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #00bfa5;
+  margin-top: 8px;
+}
+
+.transaction-field {
+  width: 100%;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.transaction-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+.transaction-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+.transaction-input:focus {
+  border-color: #00bfa5;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 191, 165, 0.2);
+}
+
+.submit-payment-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #00bfa5, #009688);
+  border: none;
+  border-radius: 40px;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-top: 10px;
+}
+
+.submit-payment-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 191, 165, 0.4);
+}
+
+.submit-payment-btn:disabled {
+  opacity: 0.6;
+  transform: none;
+}
+
+.field-error {
+  display: block;
+  margin-top: 6px;
+  color: #ff6b6b;
+  font-size: 0.85rem;
+}

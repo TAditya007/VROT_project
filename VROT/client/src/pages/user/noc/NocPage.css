@@ -1,0 +1,497 @@
+/* Page Layout */
+.noc-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 32px 20px 56px;
+  color: #ffffff;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../../../assets//noc/noc_background.png") center center / cover no-repeat fixed;
+}
+
+/* Main page wrapper for centered content */
+.noc-page__container {
+  position: relative;
+  z-index: 2;
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+/* Two-column layout for form area and side info cards */
+.noc-page__content {
+  display: grid;
+  grid-template-columns: 1.8fr 0.9fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Decorative background glow used for premium dark effect */
+.noc-page__glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Top-left glow accent */
+.noc-page__glow--one {
+  top: -80px;
+  left: -80px;
+  width: 240px;
+  height: 240px;
+  background: rgba(26, 35, 126, 0.35);
+}
+
+/* Bottom-right glow accent */
+.noc-page__glow--two {
+  right: -60px;
+  bottom: 80px;
+  width: 260px;
+  height: 260px;
+  background: rgba(106, 13, 173, 0.25);
+}
+
+/* Header */
+.noc-page__header {
+  margin-bottom: 22px;
+}
+
+/* Small service badge above the page heading */
+.noc-page__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(192, 192, 192, 0.28);
+  border-radius: 999px;
+  background: rgba(13, 13, 13, 0.45);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 0 18px rgba(255, 111, 0, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Main page title */
+.noc-page__header h1 {
+  margin: 0 0 10px;
+  font-size: clamp(2rem, 3vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #ffffff;
+  text-shadow: 0 0 18px rgba(26, 35, 126, 0.25);
+}
+
+/* Intro text under the title */
+.noc-page__header p {
+  max-width: 860px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Form Sections */
+
+/* Shared premium card styling for banner, main form card, and sidebar cards */
+.noc-page__banner,
+.noc-main-card,
+.noc-side-card {
+  border: 1px solid rgba(192, 192, 192, 0.26);
+  border-radius: 20px;
+  background: rgba(13, 13, 13, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.28),
+    0 0 24px rgba(255, 111, 0, 0.08);
+}
+
+/* Informational banner about NOC usage */
+.noc-page__banner {
+  margin-bottom: 24px;
+  padding: 20px 22px;
+  border-left: 4px solid #1a237e;
+}
+
+/* Banner heading */
+.noc-page__banner h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+/* Banner description text */
+.noc-page__banner p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.7;
+}
+
+/* Main form container card */
+.noc-main-card {
+  padding: 28px;
+}
+
+/* Vertical spacing between form sections */
+.noc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* Individual grouped section such as owner, vehicle, and finance */
+.noc-form__section {
+  padding: 22px;
+  border: 1px solid rgba(192, 192, 192, 0.18);
+  border-radius: 18px;
+  background: rgba(13, 13, 13, 0.42);
+}
+
+/* Spacing under each section heading block */
+.noc-form__section-title {
+  margin-bottom: 18px;
+}
+
+/* Section title text */
+.noc-form__section-title h2 {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+  color: #6a0dad;
+  text-shadow: 0 0 14px rgba(106, 13, 173, 0.24);
+}
+
+/* Small helper description for each form section */
+.noc-form__section-title p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+/* Two-column input grid inside each section */
+.noc-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Full-width field for large inputs like address */
+.noc-form__group--full {
+  grid-column: 1 / -1;
+}
+
+/* Inputs */
+
+/* Wrapper for label, input, and validation message */
+.noc-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Form field label */
+.noc-form__group label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Shared input styles for text fields, dropdowns, and textarea */
+.noc-form__group input,
+.noc-form__group select,
+.noc-form__group textarea {
+  width: 100%;
+  padding: 14px 15px;
+  border: 1px solid rgba(192, 192, 192, 0.28);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.96rem;
+  outline: none;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Placeholder text styling */
+.noc-form__group input::placeholder,
+.noc-form__group textarea::placeholder {
+  color: rgba(192, 192, 192, 0.88);
+}
+
+/* Focus effect for better accessibility and premium feel */
+.noc-form__group input:focus,
+.noc-form__group select:focus,
+.noc-form__group textarea:focus {
+  border-color: #1a237e;
+  box-shadow: 0 0 0 4px rgba(26, 35, 126, 0.18), 0 0 18px rgba(255, 111, 0, 0.14);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* Disabled field style for financier name when loan status is not applicable */
+.noc-form__group input:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* Textarea sizing control */
+.noc-form__group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* Declaration */
+.noc-declaration {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Checkbox row for declaration confirmation */
+.noc-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+/* Checkbox input appearance */
+.noc-checkbox input {
+  margin-top: 4px;
+  accent-color: #2ecc71;
+  transform: scale(1.1);
+}
+
+/* Action Buttons */
+.noc-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* Shared button base styling */
+.noc-btn {
+  min-width: 180px;
+  padding: 14px 22px;
+  border-radius: 14px;
+  font-size: 0.96rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease, opacity 0.22s ease;
+}
+
+/* Slight lift on hover */
+.noc-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Primary submit button */
+.noc-btn--primary {
+  background: #1a237e;
+  color: #ffffff;
+  box-shadow: 0 12px 26px rgba(26, 35, 126, 0.28);
+}
+
+/* Enhanced hover for primary button */
+.noc-btn--primary:hover {
+  box-shadow: 0 0 0 1px rgba(255, 111, 0, 0.18), 0 0 22px rgba(255, 111, 0, 0.22);
+  background: #23308f;
+}
+
+/* Secondary reset button */
+.noc-btn--secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #6a0dad;
+  box-shadow: 0 0 0 1px rgba(106, 13, 173, 0.12);
+}
+
+/* Hover state for secondary button */
+.noc-btn--secondary:hover {
+  background: rgba(106, 13, 173, 0.14);
+  box-shadow: 0 0 18px rgba(106, 13, 173, 0.24);
+}
+
+/* Status / Message */
+
+/* Validation error message below fields */
+.error-text {
+  color: #ffc107;
+  font-size: 0.84rem;
+  margin-top: 2px;
+}
+
+/* Success message shown after mock submit */
+.success-message {
+  padding: 15px 16px;
+  border: 1px solid rgba(46, 204, 113, 0.3);
+  border-radius: 14px;
+  background: rgba(46, 204, 113, 0.14);
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* Sidebar / Info Cards */
+.noc-side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Individual sidebar card */
+.noc-side-card {
+  padding: 22px;
+}
+
+/* Sidebar card title */
+.noc-side-card h3 {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(106, 13, 173, 0.18);
+}
+
+/* Sidebar list styling */
+.noc-side-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.8;
+}
+
+/* Space between list items */
+.noc-side-card li + li {
+  margin-top: 6px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  /* Stack form and sidebar vertically on medium screens */
+  .noc-page__content {
+    grid-template-columns: 1fr;
+  }
+
+  /* Show sidebar above the form on smaller layouts */
+  .noc-side-panel {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Reduce overall page padding for tablets and mobiles */
+  .noc-page {
+    padding: 22px 14px 40px;
+  }
+
+  /* Reduce card padding on smaller screens */
+  .noc-main-card {
+    padding: 18px;
+  }
+
+  /* Reduce banner padding */
+  .noc-page__banner {
+    padding: 16px;
+  }
+
+  /* Reduce inner section padding */
+  .noc-form__section {
+    padding: 16px;
+  }
+
+  /* Switch form fields into a single-column layout */
+  .noc-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reset full-width field behavior since grid becomes single column */
+  .noc-form__group--full {
+    grid-column: auto;
+  }
+
+  /* Stack action buttons vertically */
+  .noc-form__actions {
+    flex-direction: column;
+  }
+
+  /* Make buttons full width for touch devices */
+  .noc-btn {
+    width: 100%;
+  }
+
+  /* Slightly reduce heading size on smaller screens */
+  .noc-page__header h1 {
+    font-size: 1.85rem;
+  }
+
+  /* Reduce text size for supporting content */
+  .noc-page__header p,
+  .noc-page__banner p,
+  .noc-side-card ul,
+  .noc-checkbox {
+    font-size: 0.94rem;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Make service badge slightly smaller on very small screens */
+  .noc-page__badge {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* Further reduce page title size for compact mobiles */
+  .noc-page__header h1 {
+    font-size: 1.65rem;
+  }
+
+  /* Slightly reduce card radius on compact screens */
+  .noc-main-card,
+  .noc-side-card,
+  .noc-page__banner {
+    border-radius: 16px;
+  }
+
+  /* Tighten input padding on small mobile devices */
+  .noc-form__group input,
+  .noc-form__group select,
+  .noc-form__group textarea {
+    padding: 13px 13px;
+  }
+}
+/* Fix dropdown select styling */
+.noc-select {
+  background-color: #1e1e2e !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.noc-select option {
+  background-color: #1e1e2e !important;
+  color: #ffffff !important;
+}
+
+.noc-select:focus {
+  border-color: #6c63ff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.3);
+}
+
+/* Error banner */
+.noc-form__error-banner {
+  background: rgba(255, 0, 0, 0.15);
+  border: 1px solid #ff4d4d;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #ff6b6b;
+  margin-bottom: 20px;
+}

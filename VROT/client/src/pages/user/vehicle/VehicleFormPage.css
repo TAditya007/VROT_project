@@ -1,0 +1,582 @@
+/* ===== Vehicle Page Base ===== */
+.vehicle-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 24px 18px 36px;
+  color: #f5f7ff;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #090611 0%, #11091b 42%, #05040a 100%);
+}
+
+/* ===== Background Image Layer ===== */
+.vehicle-page__background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(8, 5, 16, 0.3) 0%,
+      rgba(12, 8, 20, 0.34) 38%,
+      rgba(8, 6, 14, 0.4) 100%
+    ),
+    url("../../../assets/vehicle/vehicle_register.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  filter: brightness(0.92) saturate(1.08) contrast(1.04);
+  transform: scale(1);
+}
+
+/* ===== Decorative Overlay Layer ===== */
+.vehicle-page__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at top left, rgba(106, 13, 173, 0.12), transparent 24%),
+    radial-gradient(circle at top right, rgba(46, 204, 113, 0.05), transparent 20%),
+    linear-gradient(180deg, rgba(4, 3, 9, 0.08) 0%, rgba(4, 3, 9, 0.2) 100%);
+}
+
+/* ===== Main Content Container ===== */
+.vehicle-page__content {
+  position: relative;
+  z-index: 1;
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+/* ===== Main Top Bar ===== */
+.vehicle-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 20px;
+  padding: 22px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(18, 16, 27, 0.54), rgba(13, 12, 23, 0.42));
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.16);
+}
+
+/* ===== Brand Kicker Text ===== */
+.vehicle-brand-kicker {
+  margin: 0 0 8px;
+  color: #cdb7ff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* ===== Main Page Title ===== */
+.vehicle-branding h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+/* ===== Profile Card In Top Bar ===== */
+.vehicle-profile-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(160, 122, 255, 0.14);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+/* ===== Profile Avatar Circle ===== */
+.vehicle-profile-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #7b2ff7, #b06cff);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 1rem;
+  box-shadow: 0 10px 22px rgba(123, 47, 247, 0.25);
+}
+
+/* ===== Profile Text Wrapper ===== */
+.vehicle-profile-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Profile Name ===== */
+.vehicle-profile-text strong {
+  color: #ffffff;
+  font-size: 0.96rem;
+}
+
+/* ===== Profile Role Text ===== */
+.vehicle-profile-text span {
+  color: #c3bdd3;
+  font-size: 0.84rem;
+}
+
+/* ===== Logout Button ===== */
+.vehicle-logout-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 30px;
+  color: #f0eaff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vehicle-logout-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(176, 108, 255, 0.4);
+}
+
+/* ===== Progress Strip Container ===== */
+.vehicle-progress-strip {
+  margin-bottom: 22px;
+  padding: 16px 20px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(17, 15, 26, 0.46), rgba(12, 11, 21, 0.34));
+  border: 1px solid rgba(161, 126, 247, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* ===== Progress Line ===== */
+.vehicle-progress-strip__line {
+  width: 100%;
+  height: 4px;
+  margin-bottom: 12px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #2ecc71 0%,
+    #2ecc71 34%,
+    rgba(255, 255, 255, 0.18) 34%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+}
+
+/* ===== Progress Labels Row ===== */
+.vehicle-progress-strip__steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* ===== Progress Step Label ===== */
+.vehicle-progress-strip__steps span {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #d2c8e4;
+}
+
+/* ===== Active Progress Step ===== */
+.vehicle-progress-strip__steps span.active {
+  color: #86efac;
+}
+
+/* ===== Form Section Wrapper ===== */
+.vehicle-form-section {
+  width: 100%;
+}
+
+/* ===== Main Form Shell ===== */
+.vehicle-form-shell {
+  width: 100%;
+  padding: 24px 26px 28px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(15, 12, 24, 0.42), rgba(11, 10, 19, 0.26));
+  border: 1px solid rgba(188, 158, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Form Intro Area ===== */
+.vehicle-form-intro {
+  margin-bottom: 22px;
+}
+
+/* ===== Intro Tag Badge ===== */
+.vehicle-hero__tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(106, 13, 173, 0.16);
+  color: #ead9ff;
+  border: 1px solid rgba(184, 145, 255, 0.16);
+  font-size: 0.83rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ===== Intro Title ===== */
+.vehicle-form-intro h2 {
+  margin: 0 0 12px;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+/* ===== Intro Description Text ===== */
+.vehicle-hero__text {
+  margin: 0;
+  max-width: 920px;
+  color: #f0ebf8;
+  line-height: 1.7;
+}
+
+/* ===== Success / Info Message Box ===== */
+.form-message {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+/* ===== Success Message Variant ===== */
+.form-message--success {
+  background: rgba(46, 204, 113, 0.14);
+  border: 1px solid rgba(46, 204, 113, 0.24);
+  color: #b8ffd2;
+}
+
+/* ===== Submission Preview Card ===== */
+.submission-preview {
+  margin-bottom: 22px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background: rgba(18, 13, 30, 0.2);
+  border: 1px solid rgba(191, 160, 255, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.submission-preview h4 {
+  margin: 0 0 10px;
+  color: #f0ddff;
+  font-size: 1.02rem;
+}
+
+.submission-preview p {
+  margin: 6px 0;
+  color: #f1ecf8;
+}
+
+/* ===== Cards Stacked Vertically ===== */
+.vehicle-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ===== Single Form Section Card ===== */
+.form-group {
+  margin: 0;
+  padding: 20px;
+  border: 1px solid rgba(188, 158, 255, 0.08);
+  border-radius: 22px;
+  background: rgba(10, 8, 18, 0.1);
+  backdrop-filter: blur(7px);
+}
+
+.form-group legend {
+  padding: 0 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ead9ff;
+}
+
+/* ===== 2-Column Grid Inside Each Fieldset ===== */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ===== Full Width Fields (span both columns) ===== */
+.form-field.full-width {
+  grid-column: 1 / -1;
+}
+
+/* ===== Single Form Field Wrapper ===== */
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Field Label ===== */
+.form-field label {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fdfcff;
+}
+
+/* ===== Inputs, Selects, Textareas (base styles) ===== */
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.02);
+  color: #ffffff;
+  outline: none;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(3px);
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #d1c6e2;
+}
+
+/* ===== Focus state – light blue border & glow ===== */
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: #4fc3f7;
+  box-shadow: 0 0 0 4px rgba(79, 195, 247, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ===== Hover state (when not focused and not filled) – subtle light blue border ===== */
+.form-field input:hover:not(:focus):not(.is-filled),
+.form-field select:hover:not(:focus):not(.is-filled),
+.form-field textarea:hover:not(:focus):not(.is-filled) {
+  border-color: #4fc3f7;
+}
+
+/* ===== Filled (valid) state – rich purple background and border ===== */
+.form-field input.is-filled,
+.form-field select.is-filled,
+.form-field textarea.is-filled {
+  background: rgba(123, 47, 247, 0.18);
+  border-color: #a855f7;
+  color: #f8f2ff;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.18), inset 0 1px 4px rgba(123, 47, 247, 0.1);
+}
+
+/* ===== Error state ===== */
+.form-field input.is-error,
+.form-field select.is-error,
+.form-field textarea.is-error {
+  border-color: #ff4d6d;
+  background: rgba(255, 77, 109, 0.1);
+  color: #fff5f7;
+  box-shadow: 0 0 0 3px rgba(255, 77, 109, 0.08);
+}
+
+.form-field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.error-text {
+  margin-top: 8px;
+  font-size: 0.84rem;
+  color: #ff9aae;
+}
+
+/* ===== Field Hint Text ===== */
+.field-hint {
+  display: block;
+  font-size: 0.75rem;
+  color: #b9b0d4;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* ===== Override browser autofill backgrounds – eliminates white flash ===== */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(20, 16, 36, 0.95) inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff;
+  border-color: #a855f7 !important;          /* Match filled state purple */
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Make date picker calendar icon white */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+input[type="date"] {
+  color-scheme: dark;
+}
+
+/* ===== Declaration Checkbox (before buttons) ===== */
+.declaration-wrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.025);
+  color: #f2edf8;
+  line-height: 1.6;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(3px);
+}
+
+.checkbox-row input {
+  margin-top: 4px;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: #9b6dff;
+}
+
+.checkbox-filled {
+  border-color: #9b6dff;
+  background: rgba(106, 13, 173, 0.12);
+}
+
+.checkbox-error {
+  border-color: #ff4d6d;
+  background: rgba(255, 77, 109, 0.08);
+}
+
+/* ===== Button Row ===== */
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.btn {
+  min-width: 190px;
+  padding: 14px 20px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  font-size: 0.96rem;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #2ecc71;
+  color: #08110d;
+  box-shadow: 0 10px 24px rgba(46, 204, 113, 0.22);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 4px rgba(46, 204, 113, 0.14), 0 16px 32px rgba(46, 204, 113, 0.26);
+  background: #33d978;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.045);
+  color: #f3effa;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(160, 122, 255, 0.22);
+}
+
+/* ===== Mobile Layout (stack inner fields as well) ===== */
+@media (max-width: 768px) {
+  .vehicle-page {
+    padding: 16px 10px 28px;
+  }
+
+  .vehicle-topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px;
+  }
+
+  .vehicle-form-shell {
+    padding: 18px;
+  }
+
+  .vehicle-branding h1,
+  .vehicle-form-intro h2 {
+    font-size: 1.55rem;
+  }
+
+  /* On mobile, fields inside each card stack vertically */
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .form-field.full-width {
+    grid-column: auto;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .vehicle-progress-strip__steps {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/* Fix dropdown select styling */
+.vehicle-select {
+  background-color: #1e1e2e !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.vehicle-select option {
+  background-color: #1e1e2e !important;
+  color: #ffffff !important;
+}
+
+.vehicle-select:focus {
+  border-color: #6c63ff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.3);
+}
+
+/* Error banner */
+.vehicle-form__error-banner {
+  background: rgba(255, 0, 0, 0.15);
+  border: 1px solid #ff4d4d;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #ff6b6b;
+  margin-bottom: 20px;
+}

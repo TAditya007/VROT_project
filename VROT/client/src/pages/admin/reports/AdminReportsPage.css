@@ -1,0 +1,352 @@
+/* Page Layout */
+.admin-reports-page {
+  min-height: 100vh;
+  padding: 28px;
+  position: relative;
+  color: #ffffff;
+  background: url("../../../assets/admin/reports.jpg") center/cover no-repeat fixed;
+  overflow: hidden;
+}
+
+.page-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.admin-reports-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+.glass-panel {
+  background: rgba(18, 18, 18, 0.6);
+  border: 1px solid rgba(192, 192, 192, 0.35);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 24px rgba(0, 123, 255, 0.08);
+}
+
+/* Header */
+.reports-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 24px;
+  padding: 22px;
+  border-radius: 20px;
+}
+
+.page-kicker {
+  margin: 0 0 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #00ffff;
+  font-size: 12px;
+}
+
+.reports-header h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.page-intro {
+  margin: 8px 0 0;
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.6;
+}
+
+.export-btn {
+  border: 1px solid #00ffff;
+  color: #ffffff;
+  padding: 12px 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.primary-btn {
+  background: #00ffff;
+  box-shadow: 0 0 18px rgba(0, 255, 255, 0.22);
+}
+
+.export-btn:hover {
+  background: #6a0dad;
+  border-color: #6a0dad;
+  box-shadow: 0 0 22px rgba(106, 13, 173, 0.42), 0 0 30px rgba(0, 123, 255, 0.25);
+}
+
+/* Summary Cards */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  padding: 18px;
+  border-radius: 18px;
+}
+
+.stat-card span {
+  display: block;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+}
+
+.stat-card strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.stat-card.approved { border-color: rgba(46, 204, 113, 0.35); }
+.stat-card.rejected { border-color: rgba(255, 193, 7, 0.35); }
+.stat-card.pending { border-color: rgba(255, 193, 7, 0.25); }
+.stat-card.review { border-color: rgba(0, 255, 255, 0.35); }
+
+/* Filters */
+.filters-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 18px;
+  border-radius: 18px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 13px;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(18, 18, 18, 0.7);
+  border: 1px solid rgba(192, 192, 192, 0.45);
+  color: #ffffff;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.filter-group select:focus {
+  border-color: #00ffff;
+  box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.15), 0 0 18px rgba(0, 123, 255, 0.2);
+  background: rgba(18, 18, 18, 0.82);
+}
+
+/* Charts Area */
+.charts-area {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.chart-card,
+.report-table-card {
+  padding: 20px;
+  border-radius: 18px;
+}
+
+.chart-card:hover,
+.report-table-card:hover,
+.stat-card:hover,
+.reports-header:hover {
+  box-shadow: 0 0 24px rgba(106, 13, 173, 0.2), 0 0 28px rgba(0, 123, 255, 0.16);
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.section-title span {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+}
+
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  min-height: 240px;
+}
+
+.bar-item {
+  flex: 1;
+  text-align: center;
+}
+
+.bar-value {
+  width: 100%;
+  max-width: 58px;
+  margin: 0 auto 10px;
+  border-radius: 14px 14px 6px 6px;
+  background: linear-gradient(180deg, #00ffff, #6a0dad);
+  box-shadow: 0 0 24px rgba(0, 255, 255, 0.25);
+}
+
+.bar-item p,
+.bar-item span {
+  margin: 4px 0 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 12px;
+}
+
+.service-list {
+  display: grid;
+  gap: 16px;
+}
+
+.service-row {
+  display: grid;
+  gap: 10px;
+}
+
+.service-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #ffffff;
+}
+
+.service-meta span {
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 13px;
+}
+
+.progress-track {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.12);
+  overflow: hidden;
+  border: 1px solid rgba(192, 192, 192, 0.2);
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2ecc71, #00ffff);
+}
+
+/* Report Table */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 14px 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(192, 192, 192, 0.18);
+}
+
+th {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+td {
+  color: #ffffff;
+}
+
+.status-pill {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid transparent;
+}
+
+.status-pill.approved {
+  background: rgba(46, 204, 113, 0.16);
+  color: #2ecc71;
+}
+
+.status-pill.rejected {
+  background: rgba(255, 193, 7, 0.14);
+  color: #ffc107;
+}
+
+.status-pill.pending {
+  background: rgba(255, 193, 7, 0.18);
+  color: #ffc107;
+}
+
+.status-pill.under-review {
+  background: rgba(0, 255, 255, 0.12);
+  color: #00ffff;
+}
+
+/* Trend Section */
+.empty-state {
+  padding: 42px 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.empty-state h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .summary-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .charts-area {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-reports-page {
+    padding: 18px;
+    background-attachment: scroll;
+  }
+
+  .reports-header {
+    flex-direction: column;
+  }
+
+  .filters-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

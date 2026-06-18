@@ -1,0 +1,516 @@
+/* Page Layout */
+.status-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 40px 20px 72px;
+  color: #ffffff;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(5, 10, 16, 0.62), rgba(5, 10, 16, 0.82)),
+    url('../../../assets/status/status_track.jpg') center/cover no-repeat fixed;
+}
+
+.status-page::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(0, 191, 255, 0.18), transparent 30%),
+    radial-gradient(circle at top right, rgba(255, 215, 0, 0.12), transparent 28%),
+    linear-gradient(180deg, rgba(2, 6, 12, 0.25), rgba(2, 6, 12, 0.55));
+  pointer-events: none;
+  z-index: 0;
+}
+
+.status-page__container {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.status-page__glow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.status-page__glow--one {
+  top: 50px;
+  left: -30px;
+  width: 260px;
+  height: 260px;
+  background: rgba(0, 191, 255, 0.18);
+}
+
+.status-page__glow--two {
+  right: -20px;
+  bottom: 100px;
+  width: 280px;
+  height: 280px;
+  background: rgba(255, 215, 0, 0.12);
+}
+
+/* Header */
+.status-page__hero {
+  margin-bottom: 28px;
+}
+
+.status-page__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  margin-bottom: 14px;
+  border: 1px solid rgba(0, 191, 255, 0.28);
+  border-radius: 999px;
+  background: rgba(28, 28, 28, 0.48);
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+}
+
+.status-page__hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  color: #ffffff;
+  text-shadow: 0 0 18px rgba(0, 191, 255, 0.16);
+}
+
+.status-page__hero p {
+  max-width: 760px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* Status Card */
+.status-card {
+  margin-bottom: 24px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 22px;
+  background: rgba(28, 28, 28, 0.44);
+  box-shadow:
+    0 18px 50px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px) saturate(170%);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+}
+
+.status-card__header {
+  margin-bottom: 18px;
+}
+
+.status-card__header h2 {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  color: #ffffff;
+}
+
+.status-card__header p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.65;
+}
+
+.status-empty-state {
+  text-align: center;
+  padding: 36px 24px;
+}
+
+.status-empty-state h3 {
+  margin: 0 0 10px;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.status-empty-state p {
+  margin: 0 auto;
+  max-width: 620px;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
+}
+
+/* Form */
+.status-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.status-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.status-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.status-form__field label {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.status-form__field input {
+  width: 100%;
+  height: 54px;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  background: rgba(15, 15, 15, 0.62);
+  color: #ffffff;
+  outline: none;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+}
+
+.status-form__field input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.status-form__field input:focus {
+  border-color: rgba(0, 191, 255, 0.8);
+  box-shadow: 0 0 0 4px rgba(0, 191, 255, 0.18);
+}
+
+.status-form__actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.status-form__button {
+  min-width: 180px;
+  height: 52px;
+  padding: 0 20px;
+  border: 1px solid rgba(0, 191, 255, 0.32);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(0, 191, 255, 0.92) 0%, rgba(0, 120, 255, 0.95) 100%);
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+}
+
+.status-form__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 191, 255, 0.25);
+  filter: brightness(1.06);
+}
+
+.status-form__button:active {
+  transform: translateY(0);
+}
+
+.status-form__message {
+  padding: 14px 16px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.status-form__message--error {
+  border: 1px solid rgba(255, 99, 132, 0.24);
+  background: rgba(255, 99, 132, 0.12);
+  color: #ffd5df;
+}
+
+/* Summary Card */
+.status-summary-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.status-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.status-summary-item {
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.status-summary-item__label {
+  display: block;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.status-summary-item strong {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.status-badge--approved {
+  background: rgba(46, 204, 113, 0.14);
+  color: #7ff2b2;
+  border: 1px solid rgba(46, 204, 113, 0.28);
+}
+
+.status-badge--pending {
+  background: rgba(255, 215, 0, 0.14);
+  color: #ffe88a;
+  border: 1px solid rgba(255, 215, 0, 0.28);
+}
+
+.status-badge--rejected {
+  background: rgba(255, 99, 132, 0.14);
+  color: #ffb0c4;
+  border: 1px solid rgba(255, 99, 132, 0.28);
+}
+
+.status-badge--review {
+  background: rgba(0, 191, 255, 0.14);
+  color: #8adfff;
+  border: 1px solid rgba(0, 191, 255, 0.28);
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 14px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(0, 191, 255, 0.7), rgba(255, 215, 0, 0.28), rgba(46, 204, 113, 0.55));
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 18px;
+}
+
+.timeline-item__marker {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding-top: 2px;
+}
+
+.timeline-item__marker span {
+  width: 16px;
+  height: 16px;
+  border: 3px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  background: #1c1c1c;
+  box-shadow: 0 0 0 6px rgba(10, 12, 16, 0.82);
+}
+
+.timeline-item__content {
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.timeline-item__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.timeline-item__top h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.timeline-item__top span {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.88rem;
+}
+
+.timeline-item__content p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.65;
+}
+
+.timeline-item--completed .timeline-item__marker span {
+  border-color: #2ecc71;
+  background: #2ecc71;
+}
+
+.timeline-item--current .timeline-item__marker span {
+  border-color: #00bfff;
+  background: #00bfff;
+  box-shadow:
+    0 0 0 6px rgba(10, 12, 16, 0.82),
+    0 0 22px rgba(0, 191, 255, 0.42);
+}
+
+.timeline-item--rejected .timeline-item__marker span {
+  border-color: #ff6384;
+  background: #ff6384;
+}
+
+.timeline-item--current .timeline-item__content {
+  border-color: rgba(0, 191, 255, 0.26);
+  background: rgba(0, 191, 255, 0.08);
+}
+
+.timeline-item--rejected .timeline-item__content {
+  border-color: rgba(255, 99, 132, 0.22);
+  background: rgba(255, 99, 132, 0.08);
+}
+
+/* Remarks */
+.status-info-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+}
+
+.status-note {
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.status-note p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.75;
+}
+
+/* Pending Actions */
+.status-action-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-left: 20px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.status-action-list li {
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.status-action-list li::marker {
+  color: #00bfff;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .status-summary-grid,
+  .status-info-grid,
+  .status-form__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .status-summary-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .status-page {
+    padding: 28px 14px 48px;
+  }
+
+  .status-card {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .status-page__hero h1 {
+    font-size: 1.85rem;
+  }
+
+  .timeline-item {
+    grid-template-columns: 28px 1fr;
+    gap: 14px;
+  }
+
+  .timeline::before {
+    left: 11px;
+  }
+
+  .timeline-item__marker span {
+    width: 14px;
+    height: 14px;
+  }
+
+  .timeline-item__top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .status-form__button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .status-page__eyebrow {
+    font-size: 0.75rem;
+  }
+
+  .status-card__header h2 {
+    font-size: 1.15rem;
+  }
+
+  .status-summary-item {
+    padding: 16px;
+  }
+
+  .status-form__field input {
+    height: 50px;
+  }
+}

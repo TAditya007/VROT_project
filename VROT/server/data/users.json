@@ -1,0 +1,46 @@
+[
+  {
+    "id": "seed-admin",
+    "name": "Admin User",
+    "email": "admin@vrot.com",
+    "phone": "9999999999",
+    "password": "admin123",
+    "role": "admin",
+    "isVerified": true,
+    "profile": {
+      "age": "",
+      "sex": "",
+      "address": "",
+      "profileImage": "",
+      "idProof": {
+        "type": "",
+        "number": "",
+        "file": ""
+      }
+    },
+    "applications": [],
+    "payments": []
+  },
+  {
+    "id": "seed-demo",
+    "name": "Demo User",
+    "email": "demo@vrot.com",
+    "phone": "8888888888",
+    "password": "123456",
+    "role": "citizen",
+    "isVerified": true,
+    "profile": {
+      "age": "",
+      "sex": "",
+      "address": "",
+      "profileImage": "",
+      "idProof": {
+        "type": "",
+        "number": "",
+        "file": ""
+      }
+    },
+    "applications": [],
+    "payments": []
+  }
+]
