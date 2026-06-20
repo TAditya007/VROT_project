@@ -40,7 +40,171 @@
         "file": ""
       }
     },
-    "applications": [],
+    "applications": [
+      {
+        "id": "1781944632112",
+        "type": "registration",
+        "data": {
+          "fullName": "KOPPOLU BHARGAVA ADITYA",
+          "email": "bhargavaaditya@klh.edu.in",
+          "mobile": "9876543210",
+          "address": "SFGSTHRJDKFILTYJRTHERGWEF",
+          "idType": "Aadhaar",
+          "idNumber": "5456749845615",
+          "vehicleType": "Two Wheeler",
+          "manufacturer": "ARTGEGETR",
+          "model": "ADSFSDF",
+          "fuelType": "Diesel",
+          "registrationCategory": "Transport",
+          "chassisNumber": "W4545V4365TV543VV",
+          "engineNumber": "ASDFDF254FV543GF",
+          "manufacturingYear": "2013",
+          "color": "AERYTGV",
+          "state": "TELANGANA",
+          "rtoOffice": "AERYBET",
+          "registrationDate": "2026-04-13",
+          "insuranceProvider": "AETRYTRHRTHRT",
+          "policyNumber": "ASFAFVVVVVSDFV",
+          "declaration": "accepted"
+        },
+        "documents": [
+          {
+            "type": "aadhaar",
+            "filename": "1781944692260-299823922-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "originalname": "Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "path": "/uploads/1781944692260-299823922-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "mimetype": "application/pdf",
+            "size": 0
+          },
+          {
+            "type": "addressProof",
+            "filename": "1781944692263-603112347-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "originalname": "Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "path": "/uploads/1781944692263-603112347-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "mimetype": "application/pdf",
+            "size": 0
+          },
+          {
+            "type": "vehicleInvoice",
+            "filename": "1781944692263-671145736-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "originalname": "Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "path": "/uploads/1781944692263-671145736-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "mimetype": "application/pdf",
+            "size": 0
+          },
+          {
+            "type": "insurance",
+            "filename": "1781944692264-401832144-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "originalname": "Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "path": "/uploads/1781944692264-401832144-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "mimetype": "application/pdf",
+            "size": 0
+          },
+          {
+            "type": "pollution",
+            "filename": "1781944692264-739038400-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "originalname": "Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "path": "/uploads/1781944692264-739038400-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "mimetype": "application/pdf",
+            "size": 0
+          },
+          {
+            "type": "photo",
+            "filename": "1781944692264-452746350-term 3 .png",
+            "originalname": "term 3 .png",
+            "path": "/uploads/1781944692264-452746350-term 3 .png",
+            "mimetype": "image/png",
+            "size": 190884
+          }
+        ],
+        "status": "pending",
+        "createdAt": "2026-06-20T08:37:12.112Z"
+      },
+      {
+        "id": "1781944745632",
+        "type": "transfer",
+        "data": {
+          "sellerName": "KOPPOLU BHARGAVA ADITYA",
+          "sellerMobile": "9876543210",
+          "sellerEmail": "bhargavaaditya@klh.edu.in",
+          "sellerAddress": "qawesrdtfyguhijokpl",
+          "sellerIdProof": "5456749845615",
+          "buyerName": "KOPPOLU BHARGAVA ADITYA",
+          "buyerMobile": "9876543210",
+          "buyerEmail": "bhargavaaditya@klh.edu.in",
+          "buyerAge": "89",
+          "buyerAddress": "qawesrdtfyguhijojljkhgbc",
+          "buyerIdProof": "5456749845615",
+          "registrationNumber": "AEYGBVERGV ",
+          "manufacturer": "ARTGEGETR",
+          "model": "ADSFSDF",
+          "chassisNumber": "W4545V4365TV543V",
+          "engineNumber": "ASDFDF254FV543GF",
+          "fuelType": "Diesel",
+          "registrationState": "ASFG ART RT AR",
+          "transferDate": "2026-06-05",
+          "transferReason": "Auction",
+          "saleAmount": "452222",
+          "nocAvailable": "no",
+          "hypothecationExists": "no",
+          "financerName": "",
+          "sellerConfirmed": "yes",
+          "buyerConfirmed": "yes"
+        },
+        "documents": [
+          {
+            "type": "aadhaar",
+            "filename": "1781944760681-819596424-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "originalname": "Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "path": "/uploads/1781944760681-819596424-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "mimetype": "application/pdf",
+            "size": 0
+          },
+          {
+            "type": "addressProof",
+            "filename": "1781944760681-582244780-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "originalname": "Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "path": "/uploads/1781944760681-582244780-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "mimetype": "application/pdf",
+            "size": 0
+          },
+          {
+            "type": "vehicleInvoice",
+            "filename": "1781944760681-685094943-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "originalname": "Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "path": "/uploads/1781944760681-685094943-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "mimetype": "application/pdf",
+            "size": 0
+          },
+          {
+            "type": "insurance",
+            "filename": "1781944760682-149942054-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "originalname": "Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "path": "/uploads/1781944760682-149942054-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "mimetype": "application/pdf",
+            "size": 0
+          },
+          {
+            "type": "pollution",
+            "filename": "1781944760682-895664385-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "originalname": "Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "path": "/uploads/1781944760682-895664385-Y25 B.Tech Tri- Sem End Sem Exams Time-Table- June-2026.pdf",
+            "mimetype": "application/pdf",
+            "size": 0
+          },
+          {
+            "type": "photo",
+            "filename": "1781944760682-413094004-term 3 .png",
+            "originalname": "term 3 .png",
+            "path": "/uploads/1781944760682-413094004-term 3 .png",
+            "mimetype": "image/png",
+            "size": 190884
+          }
+        ],
+        "status": "pending",
+        "createdAt": "2026-06-20T08:39:05.632Z"
+      }
+    ],
     "payments": []
   }
 ]
