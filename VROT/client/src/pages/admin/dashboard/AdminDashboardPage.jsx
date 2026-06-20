@@ -1,5 +1,5 @@
 import React, { useMemo, useState, useEffect } from "react";
-import { useAuth } from "../../context/AuthContext";
+import { useAuth } from "../../../context/AuthContext";
 import "./AdminDashboardPage.css";
 
 // Status mapping for UI display
